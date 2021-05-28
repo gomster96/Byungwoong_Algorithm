@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "algorithm": "cpp",
+        "vector": "cpp",
+        "stack": "cpp",
+        "ios": "cpp",
+        "iosfwd": "cpp",
+        "ostream": "cpp",
+        "memory": "cpp",
+        "scoped_allocator": "cpp",
+        "iostream": "cpp"
+    }
+}
