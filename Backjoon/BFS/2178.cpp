@@ -4,22 +4,47 @@ using namespace std;
 
 int N, M;
 
-int a[102][102];
+int check[100][100] = {0, };
+bool v[100][100] = {false,};
+string arr[100];
 int dy[4] = {-1, 0, 1, 0};
 int dx[4] = {0, 1, 0, -1};
-int main(){
-    ios_base::sync_with_stdio(false);
-    freopen("../input.txt","rt",stdin);
-    cin >> N >> M;
 
-    for(int i=1; i<=N; i++){
-        for(int j=1; j<=M; j++){
-            cin >> a[i][j];
+void BFS(int i, int j){
+    v[i][j] = true;
+
+    queue<pair<int, int> > q;
+    q.push(make_pair(i, j));
+
+    while(!q.empty()){
+        int x = q.front().second;
+        int y = q.front().first;
+
+        q.pop();
+
+        for(int k=0; k<4; k++){
+            int newX = x+dx[k];
+            int newY = y+dy[k];
+            if(0 <= newX && newX < M && 0 <= newY && newY < N && arr[newY][newX] == '1' && !v[newY][newX] && check[newY][newX] == 0){
+                check[newY][newX] = check[y][x] + 1;
+                v[newY][newX] = true;
+                q.push(make_pair(newY, newX));
+            }
         }
     }
-    queue<pair<int, int> > q;
-    q.push(make_pair(1,1));
-    a[1][1] = 0;
+}
+
+int main(){
+    ios_base::sync_with_stdio(false);
+    // freopen("../input.txt","rt",stdin);
+    int i;
+
+    cin >> N >> M;
+    for(i=0; i<N; i++) cin>> arr[i];
+
+    BFS(0,0);
+    cout<<check[N-1][M-1]+1<<endl;
+
     return 0;
 }
 
