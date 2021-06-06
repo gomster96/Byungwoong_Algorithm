@@ -4,7 +4,7 @@ using namespace std;
 
 int N;
 int a[301];
-/// 캐시문제로 한참 해맷음.
+/// 캐시문제로 한참 해맷음. 반드시 정리해두기
 int cache[3][301];
 int climStairs(int n, int c){
     if(n<=0) return 0;

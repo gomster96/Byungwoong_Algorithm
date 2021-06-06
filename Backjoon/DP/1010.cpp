@@ -21,6 +21,7 @@ int main(){
             for(k = j-1; k>=i-1; k--) dp[i][j] += dp[i-1][k];
         }
     }
+    
 
     return 0;
 }

@@ -37,9 +37,11 @@ int main(){
     for(int i=1; i<=N; i++){
         if(a[i].size()!= 0){
             memset(ch, false, sizeof(ch));
-            cnt = 0;    
+            cnt = 0;  
+            /// 이거 넣는것도 실수  
             ch[i] = true;
             DFS(i);
+            // 요것도 생각은 했는데 이런방법으로 구현 x
             if(resCnt < cnt){
                 
                 resCnt = cnt;

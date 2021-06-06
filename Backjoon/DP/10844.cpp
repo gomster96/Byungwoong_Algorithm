@@ -25,6 +25,7 @@ int stairNum(){
     
     int ret = 0;
     for(int i=0; i<=9; i++){
+        //// 여기도 함부러 += 하면서 %쓰면 틀린다.
         ret = (ret +dp[i][N]) %MOD;
     
     }

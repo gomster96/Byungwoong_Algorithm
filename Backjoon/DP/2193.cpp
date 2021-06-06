@@ -22,7 +22,6 @@ int main(){
     cin >> N;
     
     cout << pinaryNumber(N) << endl;
-    cout<<dp[2] << endl;
 
     return 0;
 }

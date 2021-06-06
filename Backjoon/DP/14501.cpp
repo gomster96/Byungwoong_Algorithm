@@ -18,17 +18,6 @@ void DFS(int T, int P){
                 DFS(T+a[T+1].first, P+a[T+1].second);
         }
         DFS(T+1, P);
-
-        // for(int i=T+1; i<=N; i++){
-            // if(T+a[i-1].first <= N){
-            //     cout<< T << " " << i << " " << P << endl;
-            //     DFS(T+a[i-1].first, P+a[i-1].second);
-            //     DFS(T+1, P);
-            // }
-        //     else{
-        //         DFS(N, P);
-        //     }  
-        // }
     }
 }
 
